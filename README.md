@@ -1,30 +1,60 @@
-# Github resume automation
+# 📄 J HARSH VARDHAN - Digital Resume
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+[![Daily Update](https://github.com/username/resume/actions/workflows/daily-update.yml/badge.svg)](https://github.com/username/resume/actions/workflows/daily-update.yml)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-2025--01--26-blue)](https://github.com/username/resume)
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/1734675jharshvardhan-6516s-projects/v0-github-resume-automation)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/2Esjc2CfRIV)
+> **Computer Science Graduate** | **Software Developer** | **AI & Blockchain Enthusiast**
 
-## Overview
+Welcome to my digital resume repository! This repository is automatically updated daily to showcase my professional journey and maintain an active GitHub presence.
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 🎯 Quick Links
 
-## Deployment
+- [📋 Resume (Markdown)](./resume.md)
+- [📄 Resume (PDF)](./resume.pdf)
+- [💼 Portfolio Projects](./projects/)
+- [📊 GitHub Stats](./stats.md)
 
-Your project is live at:
+## 🔄 Repository Stats
 
-**[https://vercel.com/1734675jharshvardhan-6516s-projects/v0-github-resume-automation](https://vercel.com/1734675jharshvardhan-6516s-projects/v0-github-resume-automation)**
+- **Total Commits**: ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/username/resume)
+- **Last Updated**: January 26, 2025
+- **Days Active**: 1
+- **Auto-Update Status**: ✅ Active
 
-## Build your app
+## 🚀 Featured Projects
 
-Continue building your app on:
+### 🌐 Web3 Wallet Manager
+A decentralized Ethereum wallet management platform with multi-chain support planning.
 
-**[https://v0.dev/chat/projects/2Esjc2CfRIV](https://v0.dev/chat/projects/2Esjc2CfRIV)**
+### ✈️ Airline Reservation System
+Full-stack web application for flight booking and management.
 
-## How It Works
+### 🎨 EmbroDesigns
+Web platform showcasing embroidery machine designs with seamless browsing.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 📈 Daily Updates
+
+This repository automatically updates daily with:
+- 📅 Current date and time
+- 📊 GitHub activity statistics
+- 🎯 Professional goals tracking
+- 📚 Learning progress updates
+
+## 🛠️ Tech Stack
+
+**Languages**: Python, JavaScript, Java, PHP, Solidity, HTML, CSS, SQL  
+**Cloud**: Google Cloud Platform, Vertex AI, AppSheet  
+**Blockchain**: Ethereum, Web3, DApps  
+**Databases**: MySQL, PhpMyAdmin  
+**Tools**: XAMPP, Git, GitHub Actions
+
+## 📞 Contact Information
+
+- 📧 Email: harshvardhan.21.6361@gmail.com
+- 📱 Phone: +91 6361744165
+- 🔗 LinkedIn: [j-harsh-vardhan-934a00258](https://linkedin.com/in/j-harsh-vardhan-934a00258)
+- 📍 Location: Bengaluru, Karnataka, India
+
+---
+
+*This repository is automatically maintained and updated daily to reflect my ongoing professional development.*
