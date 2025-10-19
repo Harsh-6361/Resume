@@ -81,14 +81,14 @@ export function SectionReorder({ sections, onSectionsChange }: SectionReorderPro
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <p className="text-sm text-gray-600">Customize which sections appear in your resume and their order.</p>
+        <p className="text-sm text-muted-foreground">Customize which sections appear in your resume and their order.</p>
 
         {sections.map((section, index) => (
           <div
             key={section.id}
-            className={`flex items-center gap-3 p-3 border rounded-lg ${section.enabled ? "bg-white" : "bg-gray-50"}`}
+            className={`flex items-center gap-3 p-3 border rounded-lg ${section.enabled ? "bg-card" : "bg-muted/50"}`}
           >
-            <GripVertical className="h-4 w-4 text-gray-400" />
+            <GripVertical className="h-4 w-4 text-muted-foreground/60" />
 
             <div className="flex-1">
               <div className="flex items-center gap-2">

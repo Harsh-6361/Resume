@@ -171,11 +171,11 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
   const getPriorityIcon = (priority: string) => {
     switch (priority) {
       case "high":
-        return <AlertCircle className="h-4 w-4 text-red-500" />
+        return <AlertCircle className="h-4 w-4 text-destructive" />
       case "medium":
-        return <Info className="h-4 w-4 text-yellow-500" />
+        return <Info className="h-4 w-4 text-accent" />
       case "low":
-        return <CheckCircle className="h-4 w-4 text-green-500" />
+        return <CheckCircle className="h-4 w-4 text-secondary" />
       default:
         return <Info className="h-4 w-4" />
     }
@@ -184,18 +184,18 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case "ats":
-        return <Shield className="h-4 w-4 text-blue-500" />
+        return <Shield className="h-4 w-4 text-primary" />
       case "keywords":
-        return <Zap className="h-4 w-4 text-purple-500" />
+        return <Zap className="h-4 w-4 text-primary" />
       default:
-        return <Brain className="h-4 w-4 text-gray-500" />
+        return <Brain className="h-4 w-4 text-muted-foreground" />
     }
   }
 
   const getScoreColor = (score: number) => {
-    if (score >= 85) return "text-green-600"
-    if (score >= 70) return "text-yellow-600"
-    return "text-red-600"
+    if (score >= 85) return "text-secondary"
+    if (score >= 70) return "text-accent"
+    return "text-destructive"
   }
 
   const getScoreMessage = (score: number) => {
@@ -208,7 +208,7 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Brain className="h-5 w-5 text-purple-600" />
+          <Brain className="h-5 w-5 text-primary" />
           AI Resume Optimization
           <Badge variant="outline" className="text-xs">
             ATS-Friendly
@@ -218,16 +218,16 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
       <CardContent className="space-y-4">
         {isAnalyzing ? (
           <div className="text-center py-8">
-            <Zap className="h-8 w-8 text-purple-600 mx-auto mb-4 animate-pulse" />
-            <p className="text-gray-600">Analyzing your resume for ATS compatibility...</p>
-            <p className="text-sm text-gray-500 mt-2">Checking keywords, formatting, and structure</p>
+            <Zap className="h-8 w-8 text-primary mx-auto mb-4 animate-pulse" />
+            <p className="text-muted-foreground">Analyzing your resume for ATS compatibility...</p>
+            <p className="text-sm text-muted-foreground mt-2">Checking keywords, formatting, and structure</p>
           </div>
         ) : optimization ? (
           <>
             <div className="text-center">
               <div className={`text-3xl font-bold ${getScoreColor(optimization.score)}`}>{optimization.score}/100</div>
-              <p className="text-gray-600">ATS Compatibility Score</p>
-              <p className="text-sm text-gray-500 mt-1">{getScoreMessage(optimization.score)}</p>
+              <p className="text-muted-foreground">ATS Compatibility Score</p>
+              <p className="text-sm text-muted-foreground mt-1">{getScoreMessage(optimization.score)}</p>
               <Progress value={optimization.score} className="mt-3" />
             </div>
 
@@ -238,7 +238,7 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
                   AI Optimization Suggestions
                 </h4>
                 {optimization.suggestions.map((suggestion, index) => (
-                  <div key={index} className="flex gap-3 p-3 bg-gray-50 rounded-lg">
+                  <div key={index} className="flex gap-3 p-3 bg-muted/50 rounded-lg">
                     <div className="flex gap-2">
                       {getTypeIcon(suggestion.type)}
                       {getPriorityIcon(suggestion.priority)}
@@ -264,22 +264,22 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
                           {suggestion.type}
                         </Badge>
                       </div>
-                      <p className="text-sm text-gray-700">{suggestion.message}</p>
+                      <p className="text-sm text-muted-foreground">{suggestion.message}</p>
                     </div>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="text-center py-4">
-                <CheckCircle className="h-8 w-8 text-green-600 mx-auto mb-2" />
-                <p className="text-green-600 font-medium">Outstanding! Your resume is perfectly optimized.</p>
-                <p className="text-sm text-gray-600 mt-1">ATS systems will easily parse and rank your resume</p>
+                <CheckCircle className="h-8 w-8 text-secondary mx-auto mb-2" />
+                <p className="text-secondary font-medium">Outstanding! Your resume is perfectly optimized.</p>
+                <p className="text-sm text-muted-foreground mt-1">ATS systems will easily parse and rank your resume</p>
               </div>
             )}
 
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <h5 className="font-medium text-blue-900 mb-2">💡 ATS Optimization Tips</h5>
-              <ul className="text-sm text-blue-800 space-y-1">
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <h5 className="font-medium text-primary mb-2">💡 ATS Optimization Tips</h5>
+              <ul className="text-sm text-primary space-y-1">
                 <li>• Use standard section headings (Experience, Education, Skills)</li>
                 <li>• Include keywords from job descriptions</li>
                 <li>• Quantify achievements with numbers and percentages</li>
@@ -288,7 +288,7 @@ export function AIOptimization({ resumeData }: ResumeOptimizationProps) {
               </ul>
             </div>
 
-            <Button onClick={analyzeResume} variant="outline" className="w-full">
+            <Button onClick={analyzeResume} variant="outline" className="w-full bg-transparent">
               <Brain className="h-4 w-4 mr-2" />
               Re-analyze Resume
             </Button>

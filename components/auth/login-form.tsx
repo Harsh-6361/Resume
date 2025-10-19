@@ -53,11 +53,11 @@ export function LoginForm({ onLogin }: LoginFormProps) {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted p-4">
+      <Card className="w-full max-w-md bg-card">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-blue-600">Hesume Builder</CardTitle>
-          <p className="text-gray-600">Create professional resumes with AI assistance</p>
+          <CardTitle className="text-3xl font-bold text-primary">Hesume Builder</CardTitle>
+          <p className="text-muted-foreground">Create professional resumes with AI assistance</p>
           <Badge variant="outline" className="mt-2 text-xs">
             Created by HARSH VARDHAN
           </Badge>

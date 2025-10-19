@@ -6,11 +6,11 @@ interface ClassicTemplateProps {
 
 export function ClassicTemplate({ data }: ClassicTemplateProps) {
   return (
-    <div className="bg-white text-gray-900 max-w-4xl mx-auto p-8 font-serif">
+    <div className="bg-card text-foreground max-w-4xl mx-auto p-8 font-serif">
       {/* Header */}
-      <div className="text-center border-b-2 border-gray-800 pb-6 mb-8">
+      <div className="text-center border-b-2 border-foreground pb-6 mb-8">
         <h1 className="text-3xl font-bold mb-2">{data.personalInfo.fullName || "Your Name"}</h1>
-        <div className="text-gray-600 space-y-1">
+        <div className="text-muted-foreground space-y-1">
           {data.personalInfo.email && <div>{data.personalInfo.email}</div>}
           <div className="flex justify-center gap-4">
             {data.personalInfo.phone && <span>{data.personalInfo.phone}</span>}
@@ -27,17 +27,17 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
         {/* Summary */}
         {data.personalInfo.summary && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Professional Summary
             </h2>
-            <p className="text-gray-700 leading-relaxed text-justify">{data.personalInfo.summary}</p>
+            <p className="text-foreground leading-relaxed text-justify">{data.personalInfo.summary}</p>
           </section>
         )}
 
         {/* Experience */}
         {data.experience.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Professional Experience
             </h2>
             <div className="space-y-6">
@@ -46,10 +46,10 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
                   <div className="flex justify-between items-start mb-2">
                     <div>
                       <h3 className="text-lg font-semibold">{exp.position}</h3>
-                      <p className="font-medium text-gray-700">{exp.company}</p>
-                      {exp.location && <p className="text-gray-600 text-sm italic">{exp.location}</p>}
+                      <p className="font-medium text-foreground">{exp.company}</p>
+                      {exp.location && <p className="text-muted-foreground text-sm italic">{exp.location}</p>}
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">
+                    <div className="text-sm text-muted-foreground font-medium">
                       {exp.startDate &&
                         new Date(exp.startDate).toLocaleDateString("en-US", { month: "long", year: "numeric" })}
                       {" - "}
@@ -59,7 +59,7 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
                           new Date(exp.endDate).toLocaleDateString("en-US", { month: "long", year: "numeric" })}
                     </div>
                   </div>
-                  {exp.description && <p className="text-gray-700 leading-relaxed text-justify">{exp.description}</p>}
+                  {exp.description && <p className="text-foreground leading-relaxed text-justify">{exp.description}</p>}
                 </div>
               ))}
             </div>
@@ -69,7 +69,7 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
         {/* Education */}
         {data.education.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Education
             </h2>
             <div className="space-y-4">
@@ -79,11 +79,11 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
                     <h3 className="font-semibold">
                       {edu.degree} {edu.field && `in ${edu.field}`}
                     </h3>
-                    <p className="text-gray-700">{edu.institution}</p>
-                    {edu.location && <p className="text-gray-600 text-sm italic">{edu.location}</p>}
-                    {edu.gpa && <p className="text-sm text-gray-600">GPA: {edu.gpa}</p>}
+                    <p className="text-foreground">{edu.institution}</p>
+                    {edu.location && <p className="text-muted-foreground text-sm italic">{edu.location}</p>}
+                    {edu.gpa && <p className="text-sm text-muted-foreground">GPA: {edu.gpa}</p>}
                   </div>
-                  <div className="text-sm text-gray-600 font-medium">
+                  <div className="text-sm text-muted-foreground font-medium">
                     {edu.graduationDate &&
                       new Date(edu.graduationDate).toLocaleDateString("en-US", { month: "long", year: "numeric" })}
                   </div>
@@ -96,12 +96,12 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
         {/* Skills */}
         {data.skills.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Core Competencies
             </h2>
             <div className="grid grid-cols-3 gap-2">
               {data.skills.map((skill) => (
-                <div key={skill} className="text-gray-700">
+                <div key={skill} className="text-foreground">
                   • {skill}
                 </div>
               ))}
@@ -112,15 +112,15 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
         {/* Projects */}
         {data.projects.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Notable Projects
             </h2>
             <div className="space-y-4">
               {data.projects.map((project) => (
                 <div key={project.id}>
                   <h3 className="font-semibold">{project.name}</h3>
-                  <p className="text-gray-700 text-sm mb-2">{project.description}</p>
-                  <div className="text-xs text-gray-600">Technologies: {project.technologies.join(", ")}</div>
+                  <p className="text-foreground text-sm mb-2">{project.description}</p>
+                  <div className="text-xs text-muted-foreground">Technologies: {project.technologies.join(", ")}</div>
                 </div>
               ))}
             </div>
@@ -130,7 +130,7 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
         {/* Certificates */}
         {data.certificates.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Certifications
             </h2>
             <div className="space-y-2">
@@ -138,9 +138,9 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
                 <div key={cert.id} className="flex justify-between">
                   <div>
                     <span className="font-medium">{cert.name}</span>
-                    <span className="text-gray-600"> - {cert.issuer}</span>
+                    <span className="text-muted-foreground"> - {cert.issuer}</span>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-muted-foreground">
                     {cert.issueDate &&
                       new Date(cert.issueDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                   </div>
@@ -153,7 +153,7 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
         {/* Activities */}
         {data.activities.length > 0 && (
           <section>
-            <h2 className="text-xl font-bold text-gray-800 mb-3 uppercase tracking-wide border-b border-gray-300 pb-1">
+            <h2 className="text-xl font-bold text-foreground mb-3 uppercase tracking-wide border-b border-border pb-1">
               Additional Information
             </h2>
             <div className="space-y-2">
@@ -161,9 +161,9 @@ export function ClassicTemplate({ data }: ClassicTemplateProps) {
                 <div key={activity.id} className="flex justify-between">
                   <div>
                     <span className="font-medium">{activity.title}</span>
-                    {activity.organization && <span className="text-gray-600"> - {activity.organization}</span>}
+                    {activity.organization && <span className="text-muted-foreground"> - {activity.organization}</span>}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-muted-foreground">
                     {activity.date &&
                       new Date(activity.date).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                   </div>

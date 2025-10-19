@@ -35,26 +35,16 @@ export function DownloadOptions({ resumeData, templateType }: DownloadOptionsPro
               body { margin: 0; padding: 0; } 
               @page { margin: 0.5in; }
             }
-            .bg-gradient-to-r { background: linear-gradient(to right, #2563eb, #9333ea) !important; }
-            .bg-gradient-to-b { background: linear-gradient(to bottom, #9333ea, #ec4899) !important; }
-            .text-white { color: white !important; }
-            .text-blue-600 { color: #2563eb !important; }
-            .text-purple-600 { color: #9333ea !important; }
-            .border-blue-600 { border-color: #2563eb !important; }
-            .border-purple-600 { border-color: #9333ea !important; }
-            .bg-blue-100 { background-color: #dbeafe !important; }
-            .bg-purple-100 { background-color: #f3e8ff !important; }
-            .bg-gray-50 { background-color: #f9fafb !important; }
-            .bg-gray-100 { background-color: #f3f4f6 !important; }
-            .text-gray-900 { color: #111827 !important; }
-            .text-gray-700 { color: #374151 !important; }
-            .text-gray-600 { color: #4b5563 !important; }
-            .text-gray-500 { color: #6b7280 !important; }
-            .border { border: 1px solid #e5e7eb; }
-            .border-l-2 { border-left: 2px solid; }
-            .border-l-4 { border-left: 4px solid; }
-            .border-b { border-bottom: 1px solid; }
-            .border-b-2 { border-bottom: 2px solid; }
+            .bg-gradient-to-r { background: linear-gradient(to right, var(--primary), var(--accent)); }
+            .bg-gradient-to-b { background: linear-gradient(to bottom, var(--accent), var(--secondary)); }
+            .text-primary { color: var(--primary); }
+            .text-muted-foreground { color: var(--muted-foreground); }
+            .bg-accent/10 { background-color: rgba(var(--accent), 0.1); }
+            .bg-muted/50 { background-color: rgba(var(--muted), 0.5); }
+            .bg-muted { background-color: var(--muted); }
+            .text-white { color: white; }
+            .border-primary { border-color: var(--primary); }
+            .border-accent { border-color: var(--accent); }
             .rounded { border-radius: 0.25rem; }
             .rounded-lg { border-radius: 0.5rem; }
             .rounded-full { border-radius: 9999px; }
@@ -215,48 +205,52 @@ export function DownloadOptions({ resumeData, templateType }: DownloadOptionsPro
   return (
     <Card>
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Download className="h-5 w-5" />
+        <CardTitle className="flex items-center gap-2 text-primary">
+          <Download className="h-5 w-5 text-primary" />
           Download & Share Options
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="grid gap-3 md:grid-cols-2">
-          <Button onClick={handleDownloadPDF} className="flex items-center gap-2">
-            <FileText className="h-4 w-4" />
+          <Button onClick={handleDownloadPDF} className="flex items-center gap-2 bg-primary text-white">
+            <FileText className="h-4 w-4 text-white" />
             Download PDF
           </Button>
 
-          <Button onClick={handleDownloadDOCX} variant="outline" className="flex items-center gap-2">
-            <FileText className="h-4 w-4" />
+          <Button
+            onClick={handleDownloadDOCX}
+            variant="outline"
+            className="flex items-center gap-2 border-accent text-accent bg-transparent"
+          >
+            <FileText className="h-4 w-4 text-accent" />
             Download DOCX
           </Button>
         </div>
 
         <div className="border-t pt-4">
-          <h4 className="font-medium mb-3 flex items-center gap-2">
-            <Globe className="h-4 w-4" />
+          <h4 className="font-medium mb-3 flex items-center gap-2 text-primary">
+            <Globe className="h-4 w-4 text-primary" />
             Host Online
           </h4>
 
           {!shareUrl ? (
-            <Button onClick={handleShare} variant="outline" className="w-full">
-              <Share2 className="h-4 w-4 mr-2" />
+            <Button onClick={handleShare} variant="outline" className="w-full border-accent text-accent bg-transparent">
+              <Share2 className="h-4 w-4 mr-2 text-accent" />
               Generate Shareable Link
             </Button>
           ) : (
             <div className="space-y-3">
-              <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
-                <code className="flex-1 text-sm break-all">{shareUrl}</code>
-                <Button onClick={handleCopyUrl} size="sm" variant="ghost">
-                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+              <div className="flex items-center gap-2 p-3 bg-accent/10 rounded-lg">
+                <code className="flex-1 text-sm break-all text-white">{shareUrl}</code>
+                <Button onClick={handleCopyUrl} size="sm" variant="ghost" className="text-accent">
+                  {copied ? <Check className="h-4 w-4 text-accent" /> : <Copy className="h-4 w-4 text-accent" />}
                 </Button>
               </div>
               <div className="flex gap-2">
-                <Badge variant="secondary" className="text-xs">
+                <Badge variant="secondary" className="text-xs bg-primary text-white">
                   ✓ Public Link Active
                 </Badge>
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-xs border-accent text-accent">
                   No Expiration
                 </Badge>
               </div>
@@ -264,8 +258,8 @@ export function DownloadOptions({ resumeData, templateType }: DownloadOptionsPro
           )}
         </div>
 
-        <div className="text-center pt-4 border-t">
-          <Badge variant="outline" className="text-xs">
+        <div className="text-center pt-4 border-t text-muted-foreground">
+          <Badge variant="outline" className="text-xs border-accent text-accent">
             Created by HARSH VARDHAN
           </Badge>
         </div>

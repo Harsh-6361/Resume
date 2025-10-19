@@ -8,11 +8,11 @@ interface ModernTemplateProps {
 
 export function ModernTemplate({ data }: ModernTemplateProps) {
   return (
-    <div className="bg-white text-gray-900 max-w-4xl mx-auto">
+    <div className="bg-white text-foreground max-w-4xl mx-auto">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8">
+      <div className="bg-gradient-to-r from-primary to-accent text-white p-8">
         <h1 className="text-4xl font-bold mb-2">{data.personalInfo.fullName || "Your Name"}</h1>
-        <div className="flex flex-wrap gap-4 text-blue-100">
+        <div className="flex flex-wrap gap-4 text-muted-foreground">
           {data.personalInfo.email && (
             <div className="flex items-center gap-1">
               <Mail className="h-4 w-4" />
@@ -56,20 +56,20 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
         {/* Summary */}
         {data.personalInfo.summary && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
               Professional Summary
             </h2>
-            <p className="text-gray-700 leading-relaxed">{data.personalInfo.summary}</p>
+            <p className="text-muted-foreground leading-relaxed">{data.personalInfo.summary}</p>
           </section>
         )}
 
         {/* Skills */}
         {data.skills.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">Skills</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Skills</h2>
             <div className="flex flex-wrap gap-2">
               {data.skills.map((skill) => (
-                <Badge key={skill} className="bg-blue-100 text-blue-800 hover:bg-blue-200">
+                <Badge key={skill} className="bg-primary/10 text-primary/90 hover:bg-primary/20">
                   {skill}
                 </Badge>
               ))}
@@ -80,18 +80,18 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
         {/* Experience */}
         {data.experience.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">Work Experience</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Work Experience</h2>
             <div className="space-y-6">
               {data.experience.map((exp) => (
-                <div key={exp.id} className="relative pl-6 border-l-2 border-blue-200">
-                  <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full"></div>
+                <div key={exp.id} className="relative pl-6 border-l-2 border-primary/20">
+                  <div className="absolute -left-2 top-0 w-4 h-4 bg-primary rounded-full"></div>
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">{exp.position}</h3>
-                      <p className="text-blue-600 font-medium">{exp.company}</p>
-                      {exp.location && <p className="text-gray-600 text-sm">{exp.location}</p>}
+                      <h3 className="text-xl font-semibold text-foreground">{exp.position}</h3>
+                      <p className="text-primary font-medium">{exp.company}</p>
+                      {exp.location && <p className="text-muted-foreground text-sm">{exp.location}</p>}
                     </div>
-                    <div className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded">
+                    <div className="text-sm text-muted-foreground bg-foreground px-3 py-1 rounded">
                       {exp.startDate &&
                         new Date(exp.startDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                       {" - "}
@@ -101,7 +101,7 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
                           new Date(exp.endDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                     </div>
                   </div>
-                  {exp.description && <p className="text-gray-700 leading-relaxed">{exp.description}</p>}
+                  {exp.description && <p className="text-muted-foreground leading-relaxed">{exp.description}</p>}
                 </div>
               ))}
             </div>
@@ -111,12 +111,12 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
         {/* Projects */}
         {data.projects.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">Projects</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Projects</h2>
             <div className="grid gap-6 md:grid-cols-2">
               {data.projects.map((project) => (
                 <div key={project.id} className="border border-gray-200 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{project.name}</h3>
-                  <p className="text-gray-700 text-sm mb-3">{project.description}</p>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{project.name}</h3>
+                  <p className="text-muted-foreground text-sm mb-3">{project.description}</p>
                   <div className="flex flex-wrap gap-1 mb-2">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="outline" className="text-xs">
@@ -124,7 +124,7 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
                       </Badge>
                     ))}
                   </div>
-                  <div className="flex gap-2 text-xs text-blue-600">
+                  <div className="flex gap-2 text-xs text-primary">
                     {project.url && (
                       <a href={project.url} className="hover:underline">
                         Live Demo
@@ -145,19 +145,19 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
         {/* Education */}
         {data.education.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">Education</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Education</h2>
             <div className="space-y-4">
               {data.education.map((edu) => (
                 <div key={edu.id} className="flex justify-between items-start">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg font-semibold text-foreground">
                       {edu.degree} {edu.field && `in ${edu.field}`}
                     </h3>
-                    <p className="text-blue-600">{edu.institution}</p>
-                    {edu.location && <p className="text-gray-600 text-sm">{edu.location}</p>}
-                    {edu.gpa && <p className="text-sm text-gray-600">GPA: {edu.gpa}</p>}
+                    <p className="text-primary">{edu.institution}</p>
+                    {edu.location && <p className="text-muted-foreground text-sm">{edu.location}</p>}
+                    {edu.gpa && <p className="text-sm text-muted-foreground">GPA: {edu.gpa}</p>}
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-muted-foreground">
                     {edu.graduationDate &&
                       new Date(edu.graduationDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                   </div>
@@ -170,19 +170,19 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
         {/* Certificates */}
         {data.certificates.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">Certificates</h2>
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">Certificates</h2>
             <div className="grid gap-4 md:grid-cols-2">
               {data.certificates.map((cert) => (
                 <div key={cert.id} className="border border-gray-200 rounded-lg p-4">
-                  <h3 className="font-semibold text-gray-900">{cert.name}</h3>
-                  <p className="text-blue-600 text-sm">{cert.issuer}</p>
-                  <p className="text-gray-600 text-xs">
+                  <h3 className="font-semibold text-foreground">{cert.name}</h3>
+                  <p className="text-primary text-sm">{cert.issuer}</p>
+                  <p className="text-muted-foreground text-xs">
                     {cert.issueDate &&
                       new Date(cert.issueDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                     {cert.expiryDate &&
                       ` - ${new Date(cert.expiryDate).toLocaleDateString("en-US", { month: "short", year: "numeric" })}`}
                   </p>
-                  {cert.credentialId && <p className="text-xs text-gray-500">ID: {cert.credentialId}</p>}
+                  {cert.credentialId && <p className="text-xs text-muted-foreground">ID: {cert.credentialId}</p>}
                 </div>
               ))}
             </div>
@@ -192,21 +192,21 @@ export function ModernTemplate({ data }: ModernTemplateProps) {
         {/* Activities */}
         {data.activities.length > 0 && (
           <section>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4 border-b-2 border-blue-600 pb-2">
+            <h2 className="text-2xl font-bold text-primary mb-4 border-b-2 border-primary pb-2">
               Additional Activities
             </h2>
             <div className="space-y-3">
               {data.activities.map((activity) => (
                 <div key={activity.id} className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-semibold text-gray-900">{activity.title}</h3>
-                    {activity.organization && <p className="text-blue-600 text-sm">{activity.organization}</p>}
-                    {activity.description && <p className="text-gray-700 text-sm">{activity.description}</p>}
+                    <h3 className="font-semibold text-foreground">{activity.title}</h3>
+                    {activity.organization && <p className="text-primary text-sm">{activity.organization}</p>}
+                    {activity.description && <p className="text-muted-foreground text-sm">{activity.description}</p>}
                     <Badge variant="outline" className="text-xs mt-1 capitalize">
                       {activity.type}
                     </Badge>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-muted-foreground">
                     {activity.date &&
                       new Date(activity.date).toLocaleDateString("en-US", { month: "short", year: "numeric" })}
                   </div>

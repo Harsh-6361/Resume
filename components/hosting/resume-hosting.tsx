@@ -99,14 +99,14 @@ export function ResumeHosting({ resumeData, templateType, user }: ResumeHostingP
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Globe className="h-5 w-5 text-blue-600" />
+          <Globe className="h-5 w-5 text-primary" />
           Host Your Resume Online
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {/* Host New Resume */}
-        <div className="space-y-4 p-4 border rounded-lg bg-blue-50">
-          <h4 className="font-medium text-blue-900">Create New Hosted Resume</h4>
+        <div className="space-y-4 p-4 border border-border rounded-lg bg-primary/5">
+          <h4 className="font-medium text-primary">Create New Hosted Resume</h4>
 
           <div className="space-y-3">
             <div>
@@ -118,7 +118,7 @@ export function ResumeHosting({ resumeData, templateType, user }: ResumeHostingP
                 placeholder="my-awesome-resume"
                 className="bg-white"
               />
-              <p className="text-xs text-gray-600 mt-1">
+              <p className="text-xs text-muted-foreground mt-1">
                 Preview: hesume-builder.com/resume/{customUrl || "your-name-1234"}
               </p>
             </div>
@@ -126,7 +126,7 @@ export function ResumeHosting({ resumeData, templateType, user }: ResumeHostingP
             <div className="flex items-center justify-between">
               <div>
                 <Label htmlFor="isPublic">Make Public</Label>
-                <p className="text-xs text-gray-600">Allow search engines to index your resume</p>
+                <p className="text-xs text-muted-foreground">Allow search engines to index your resume</p>
               </div>
               <Switch id="isPublic" checked={isPublic} onCheckedChange={setIsPublic} />
             </div>
@@ -142,7 +142,7 @@ export function ResumeHosting({ resumeData, templateType, user }: ResumeHostingP
           <div className="space-y-4">
             <h4 className="font-medium">Your Hosted Resumes</h4>
             {hostedResumes.map((resume) => (
-              <div key={resume.id} className="border rounded-lg p-4 space-y-3">
+              <div key={resume.id} className="border border-border rounded-lg p-4 space-y-3">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
@@ -155,10 +155,8 @@ export function ResumeHosting({ resumeData, templateType, user }: ResumeHostingP
                       </Badge>
                     </div>
 
-                    <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                      <code className="bg-gray-100 px-2 py-1 rounded text-xs">
-                        hesume-builder.com/resume/{resume.url}
-                      </code>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                      <code className="bg-muted px-2 py-1 rounded text-xs">hesume-builder.com/resume/{resume.url}</code>
                       <Button
                         onClick={() => copyToClipboard(resume.url, resume.id)}
                         size="sm"
@@ -200,9 +198,9 @@ export function ResumeHosting({ resumeData, templateType, user }: ResumeHostingP
         )}
 
         {/* Tips */}
-        <div className="bg-gray-50 p-4 rounded-lg">
+        <div className="bg-muted/50 p-4 rounded-lg">
           <h5 className="font-medium mb-2">💡 Hosting Tips</h5>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="text-sm text-muted-foreground space-y-1">
             <li>• Use a professional custom URL for better branding</li>
             <li>• Public resumes are indexed by search engines</li>
             <li>• Share your hosted resume link in job applications</li>
