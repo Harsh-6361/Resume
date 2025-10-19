@@ -6,7 +6,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 export function DashboardWarnings() {
   return (
     <div className="grid gap-3 mb-6">
-      <Alert className="border-yellow-500/50 bg-yellow-50 dark:bg-yellow-950/30">
+      <Alert className="border-yellow-500/50 bg-yellow-50 dark:bg-yellow-950/30 font-extralight">
         <AlertCircle className="h-4 w-4 text-yellow-600 dark:text-yellow-500" />
         <AlertTitle className="text-yellow-800 dark:text-yellow-400">Important: Do Not Refresh</AlertTitle>
         <AlertDescription className="text-yellow-700 dark:text-yellow-300">
